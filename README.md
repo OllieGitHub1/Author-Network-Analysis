@@ -6,11 +6,7 @@
 
 ### Pre-requisities
 
-##### - Networkx
-##### - Python-louvain == 0.5
-##### - Pandas
-##### - NumPy
-##### - Matplotlib.pyplot
+##### Networkx, Python-louvain, Pandas, NumPy, Matplotlib.pyplot
 
 ### Directions on use
 
