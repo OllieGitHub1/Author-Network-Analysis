@@ -10,7 +10,7 @@
 
 ### Directions on use
 
-#####Save list of publications in a CSV file. Update main.py file with file_name and directory. Run main.py which will execute code in util.py, graph_builder.py and network_analysis_builder.py. An additional line can be added to export the graph model to Gephi. 
+##### Save list of publications in a CSV file. Update main.py file with file_name and directory. Run main.py which will execute code in util.py, graph_builder.py and network_analysis_builder.py. An additional line can be added to export the graph model to Gephi. 
 
 ### Example output
 
