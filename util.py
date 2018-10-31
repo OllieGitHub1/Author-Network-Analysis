@@ -28,8 +28,6 @@ def generate_data_structures(publications, x):
     """
     authors, number_authors, l = [], [], []
     author_lists = publications['Authors'].str.split(", ") #produces list of authors for each paper
-    RCRs = publications['RCR'] #produce list of RCRs for each paper
-    RCR_list = [[RCR] for RCR in RCRs] # produce nested list of RCRs 
     
     ###Branch if code is run for first and last authors
     
@@ -50,11 +48,8 @@ def generate_data_structures(publications, x):
                 number_authors.append(1)    
             cleaned_author_lists.append(temp)
         author_lists = cleaned_author_lists
-        for i in range(len(RCR_list)): 
-            l.append(RCR_list[i]*number_authors[i]) #create list of no. authors per paper * RCR for the paper
-            author_RCRs = [RCR for RCRs in l for RCR in RCRs] # flatten list of lists
-            
-        return (authors, author_RCRs, author_lists)
+
+        return (authors, author_lists)
     
     ###Branch if code is run for all authors 
     
@@ -63,17 +58,13 @@ def generate_data_structures(publications, x):
         author_lists = publications['Authors'].str.split(", ") #produces list of authors for each paper
         for author_list in author_lists: #produce list of number of authors on each paper 
             number_authors.append(len(author_list))
-   
-        for i in range(len(RCR_list)): 
-            l.append(RCR_list[i]*number_authors[i]) #create list of no. authors per paper * RCR for the paper
-            author_RCRs = [RCR for RCRs in l for RCR in RCRs] # flatten list of lists
-        
-        return (authors, author_RCRs, author_lists)
+
+        return (authors, author_lists)
     
 def run_programme(directory, file_name):
     
     x = message()
     publications = load_file(directory, file_name)
     (authors, author_RCRs, author_lists) = generate_data_structures(publications, x)
-    return (authors, author_RCRs, author_lists)
+    return (authors, author_lists)
              
